@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/screens/splash/splash_screen.dart';
+import 'package:ui_ecommerce/state_managements/auth_provider.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
@@ -13,6 +15,15 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           const ProfilePic(),
+          const SizedBox(height: 13),
+          Consumer<AuthProvider>(
+              builder: (context, email, child) => Text(
+                    email.savedEmail,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                    ),
+                  )),
           const SizedBox(height: 20),
           ProfileMenu(
             text: "My Account",
@@ -38,6 +49,7 @@ class Body extends StatelessWidget {
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
             press: () {
+              Provider.of<AuthProvider>(context, listen: false).setAuth(false);
               Navigator.pushNamedAndRemoveUntil(context, SplashScreen.routeName,
                   (Route<dynamic> route) => false);
             },

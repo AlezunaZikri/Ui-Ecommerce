@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ui_ecommerce/components/product_card.dart';
 import 'package:ui_ecommerce/model/Product.dart';
-
 import 'package:ui_ecommerce/screens/details/details_screen.dart';
 import 'package:ui_ecommerce/size_config.dart';
 import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {
-  static String routeName = "/popular_product";
   const PopularProducts({super.key});
 
   @override
@@ -23,23 +21,24 @@ class PopularProducts extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: List.generate(
-                  demoProducts.length, 
-                  (index) {
-                    final Product product = demoProducts[index];
-                    return ProductCard(
-                      product: demoProducts[index], 
-                      press: () => Navigator.pushNamed(
-                        context, DetailScreen.routeName, 
-                        arguments: product
-                        ,
-                      ),
+            children: List.generate(
+              demoProducts.length,
+              (index) {
+                final product = demoProducts[index];
+                return ProductCard(
+                  product: product,
+                  press: () {
+                    Navigator.pushNamed(
+                      context,
+                      DetailScreen.routeName,
+                      arguments: product,
                     );
-                  }
-                ),
-              ),
-        )
+                  },
+                );
+              },
+            ),
+          ),
+        ),
       ],
     );
   }

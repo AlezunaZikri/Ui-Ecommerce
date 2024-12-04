@@ -19,7 +19,6 @@ class CheckoutCard extends StatelessWidget {
       ),
       // height: 174,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -69,7 +68,7 @@ class CheckoutCard extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: "\$337.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   ),

@@ -4,8 +4,6 @@ import 'package:ui_ecommerce/screens/home/components/discount_banner.dart';
 import 'package:ui_ecommerce/screens/home/components/home_header.dart';
 import 'package:ui_ecommerce/screens/home/components/popular_product.dart';
 import 'package:ui_ecommerce/screens/home/components/special_offers.dart';
-
-
 import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
@@ -18,7 +16,7 @@ class Body extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: getProportionateScreenHeight(20)),
-            const HomeHeader(),
+            const HeaderHomePart(),
             SizedBox(height: getProportionateScreenWidth(10)),
             const DiscountBanner(),
             const Categories(),

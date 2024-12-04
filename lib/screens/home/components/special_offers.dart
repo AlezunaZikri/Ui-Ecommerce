@@ -95,16 +95,22 @@ class SpecialOfferCard extends StatelessWidget {
                   ),
                   child: Text.rich(
                     TextSpan(
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(),
                       children: [
                         TextSpan(
                           text: "$category\n",
                           style: TextStyle(
+                            color: Colors.white,
                             fontSize: getProportionateScreenWidth(18),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(
+                          text: "$numOfBrands Brands",
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ),
+                        )
                       ],
                     ),
                   ),

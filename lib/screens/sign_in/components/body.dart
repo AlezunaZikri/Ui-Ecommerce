@@ -35,7 +35,6 @@ class _BodyState extends State<Body> {
                 'Welcome Back',
                 style: TextStyle(
                     fontSize: getProportionateScreenWidth(28),
-                    color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
               const Text(

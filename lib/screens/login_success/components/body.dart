@@ -20,8 +20,7 @@ class Body extends StatelessWidget {
             'Login Success',
             style: TextStyle(
                 fontSize: getProportionateScreenWidth(30),
-                fontWeight: FontWeight.bold,
-                color: Colors.black),
+                fontWeight: FontWeight.bold,),
           ),
           const Spacer(),
           SizedBox(

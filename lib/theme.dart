@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:ui_ecommerce/constant.dart';
 
-ThemeData themeData() {
+ThemeData themeData(bool isDarkMode) {
   return ThemeData(
       fontFamily: "Muli",
+       brightness: isDarkMode ? Brightness.dark : Brightness.light,
       appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
+        // iconTheme: IconThemeData(
+        //   color: Colors.black,
+        // ),
         titleTextStyle: TextStyle(
-          color: Colors.black,
+          // color: Colors.black,
           fontSize: 20,
         )
       ),
-      scaffoldBackgroundColor: const Color(0xFFF6F6F6),
+      // scaffoldBackgroundColor: const Color(0xFFF6F6F6),
       textTheme: textTheme(),
       visualDensity: VisualDensity.adaptivePlatformDensity,
       inputDecorationTheme: inputDecorationTheme());

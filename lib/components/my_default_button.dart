@@ -17,7 +17,7 @@ class MyDefaultButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: press,
       style: ElevatedButton.styleFrom(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: Colors.white,
         minimumSize: Size(double.infinity, getProportionateScreenHeight(55)),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
@@ -26,7 +26,7 @@ class MyDefaultButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.white,
+          color: kPrimaryColor,
           fontSize: getProportionateScreenWidth(20),
         ),
       ),

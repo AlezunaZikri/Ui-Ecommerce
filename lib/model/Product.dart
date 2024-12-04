@@ -6,7 +6,7 @@ class Product {
   final List<String> images;
   final List<Color> colors;
   final double rating, price;
-  final bool isFavourite, isPopular;
+  bool isFavourite;
 
   Product({
     required this.id,
@@ -14,15 +14,13 @@ class Product {
     required this.colors,
     this.rating = 0.0,
     this.isFavourite = false,
-    this.isPopular = false,
     required this.title,
     required this.price,
     required this.description,
   });
 }
 
-// Our demo Products
-
+// Demo products list
 List<Product> demoProducts = [
   Product(
     id: 1,
@@ -42,8 +40,6 @@ List<Product> demoProducts = [
     price: 64.99,
     description: description,
     rating: 4.8,
-    isFavourite: true,
-    isPopular: true,
   ),
   Product(
     id: 2,
@@ -60,7 +56,6 @@ List<Product> demoProducts = [
     price: 50.5,
     description: description,
     rating: 4.1,
-    isPopular: true,
   ),
   Product(
     id: 3,
@@ -77,8 +72,6 @@ List<Product> demoProducts = [
     price: 36.55,
     description: description,
     rating: 4.1,
-    isFavourite: true,
-    isPopular: true,
   ),
   Product(
     id: 4,
@@ -91,11 +84,10 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Fire Head - Phone ",
+    title: "Logitech Fire Head - Phone",
     price: 20.20,
     description: description,
     rating: 4.1,
-    isFavourite: false,
   ),
 ];
 

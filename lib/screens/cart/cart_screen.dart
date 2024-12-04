@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/constant.dart';
-import 'package:ui_ecommerce/model/Cart.dart';
+import 'package:ui_ecommerce/state_managements/cart_provider.dart';
 
 
 import 'components/body.dart';
@@ -26,11 +27,13 @@ class CartScreen extends StatelessWidget {
         children: [
           const Text(
             "Your Cart",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(),
           ),
-          Text(
-            "${demoCarts.length} items",
-            style: Theme.of(context).textTheme.bodySmall,
+          Consumer<CartProvider>(
+            builder: (context, cart, child) => Text(
+              "${cart.cartItems.length} items",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ),
         ],
       ),

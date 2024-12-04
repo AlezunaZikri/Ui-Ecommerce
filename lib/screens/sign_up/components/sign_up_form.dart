@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/components/custom_suffix_icon.dart';
 import 'package:ui_ecommerce/components/error_form.dart';
 import 'package:ui_ecommerce/components/my_default_button.dart';
 import 'package:ui_ecommerce/constant.dart';
 import 'package:ui_ecommerce/screens/complete_profile/complete_profile_screen.dart';
 import 'package:ui_ecommerce/size_config.dart';
+import 'package:ui_ecommerce/state_managements/auth_provider.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -19,6 +21,7 @@ class _SignUpFormState extends State<SignUpForm> {
   String? confirmPassword;
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
+  final TextEditingController textEditingController =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +44,8 @@ class _SignUpFormState extends State<SignUpForm> {
                 _formKey.currentState!.save();
               }
               if (errors.isEmpty) {
+                Provider.of<AuthProvider>(context,listen: false).setAuth(true);
+                Provider.of<AuthProvider>(context,listen: false).saveEmailUser(textEditingController.text);
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
@@ -130,6 +135,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField emailFormField() {
     return TextFormField(
+      controller: textEditingController,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {

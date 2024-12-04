@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_ecommerce/constant.dart';
-import 'package:ui_ecommerce/model/Cart.dart';
+import 'package:ui_ecommerce/model/cart.dart';
 
 import '../../../size_config.dart';
 
@@ -37,7 +37,7 @@ class CartCard extends StatelessWidget {
           children: [
             Text(
               cart.product.title,
-              style: const TextStyle(color: Colors.black, fontSize: 16),
+              style: const TextStyle(fontSize: 16),
               maxLines: 2,
             ),
             const SizedBox(height: 10),

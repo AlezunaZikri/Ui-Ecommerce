@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/components/custom_suffix_icon.dart';
 import 'package:ui_ecommerce/components/error_form.dart';
 import 'package:ui_ecommerce/components/my_default_button.dart';
@@ -6,6 +7,7 @@ import 'package:ui_ecommerce/constant.dart';
 import 'package:ui_ecommerce/screens/forgot_password/forgot_password_screen.dart';
 import 'package:ui_ecommerce/screens/login_success/login_success_screen.dart';
 import 'package:ui_ecommerce/size_config.dart';
+import 'package:ui_ecommerce/state_managements/auth_provider.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -21,7 +23,7 @@ class _SignInFormState extends State<SignInForm> {
   String? password;
   final List<String> errors = [];
 
-
+  final TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -44,6 +46,8 @@ class _SignInFormState extends State<SignInForm> {
                 _formKey.currentState!.save();
               }
               if(errors.isEmpty){
+                Provider.of<AuthProvider>(context,listen: false).setAuth(true);
+                Provider.of<AuthProvider>(context, listen: false).saveEmailUser(emailController.text);
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
@@ -126,6 +130,7 @@ class _SignInFormState extends State<SignInForm> {
 
   TextFormField emailFormFIeld() {
     return TextFormField(
+      controller: emailController,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {

@@ -22,10 +22,6 @@ class RoundedIconBtn extends StatelessWidget {
       width: getProportionateScreenWidth(40),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-  /// foreground color of the TextButton is set to [kPrimaryColor] and the
-  /// background color is set to white. The shape of the TextButton is set to
-  /// a circle with a radius of 50 logical pixels. The [onPressed] callback
-  /// is set to [press]. The child of the TextButton is set to [icon].
         boxShadow: [
           if (showShadow)
             BoxShadow(
