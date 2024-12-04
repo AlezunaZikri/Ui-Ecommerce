@@ -69,12 +69,13 @@ class _SearchFieldState extends State<SearchField> {
         child: CompositedTransformFollower(
           link: _layerLink,
           showWhenUnlinked: false,
-          offset: Offset(-10, 20), // Adjust as needed
+          offset:
+              Offset(-10, getProportionateScreenHeight(60)), // Turun lebih jauh
           child: Material(
             elevation: 4,
             borderRadius: BorderRadius.circular(10),
             child: ListView.separated(
-              separatorBuilder: (context, index) => SizedBox(
+              separatorBuilder: (context, index) => const SizedBox(
                 height: 10,
               ),
               shrinkWrap: true,
@@ -92,8 +93,8 @@ class _SearchFieldState extends State<SearchField> {
                         DetailScreen.routeName,
                         arguments: product,
                       );
-                      searchProvider.clearSearch(); // Clear search on selection
-                      _removeOverlay(); // Remove overlay
+                      searchProvider.clearSearch();
+                      _removeOverlay();
                     },
                     leading: Image.asset(
                       product.images[0],

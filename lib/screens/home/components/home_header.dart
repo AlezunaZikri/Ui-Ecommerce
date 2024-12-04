@@ -33,7 +33,6 @@ class HeaderHomePart extends StatelessWidget {
               ),
             ),
           ),
-          // Icon Notification
           Consumer<CartProvider>(
             builder: (context, cart, child) => const IconWithTrigger(
               svgIcon: "assets/icons/Bell.svg",
