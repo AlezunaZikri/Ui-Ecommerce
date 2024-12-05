@@ -1,0 +1,4 @@
+#Thu Dec 05 10:30:41 WIB 2024
+base.0=/Users/alezunazikri/Documents/IDN/flutter/ui_ecommerce/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

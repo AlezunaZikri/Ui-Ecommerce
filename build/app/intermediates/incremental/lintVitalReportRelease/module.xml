@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/alezunazikri/Documents/IDN/flutter/ui_ecommerce/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.3.0"
+    buildFolder="/Users/alezunazikri/Documents/IDN/flutter/ui_ecommerce/build/app"
+    bootClassPath="/Users/alezunazikri/Library/Android/sdk/platforms/android-34/android.jar:/Users/alezunazikri/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
