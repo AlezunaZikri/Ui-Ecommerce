@@ -21,7 +21,7 @@ Future<void> main() async {
 
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: true,
       builder: (context) => MultiProvider(
         providers: [
           ChangeNotifierProvider(
@@ -55,7 +55,6 @@ class MainApp extends StatelessWidget {
     SizeConfig().init(context);
     return Consumer<ThemeProvider>(
       builder: (context, theme, child) => MaterialApp(
-        useInheritedMediaQuery: true, // Agar kompatibel dengan Device Preview
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder, // Tambahan Device Preview
         debugShowCheckedModeBanner: false,
