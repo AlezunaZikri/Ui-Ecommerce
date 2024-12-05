@@ -20,27 +20,27 @@ Future<void> main() async {
   bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
   runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => ThemeProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => AuthProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => CartProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => FavoriteProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => SearchProvider(),
-          ),
-        ],
-        child: MainApp(isLoggedIn: isLoggedIn),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AuthProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FavoriteProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SearchProvider(),
+        ),
+      ],
+      child: DevicePreview(
+        enabled: true,
+        builder: (context) => MainApp(isLoggedIn: isLoggedIn)
       ),
     ),
   );
